@@ -1,35 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- <h2>Calculator</h2> -->
-    <div id="calculator">
-        <input type="text" id="display" readonly>
-        <div class="keys">
-            <button onclick="appendtoDisplay('+')" class="operator-btn">+</button>
-            <button onclick="appendtoDisplay('7')">7</button>
-            <button onclick="appendtoDisplay('8')">8</button>
-            <button onclick="appendtoDisplay('9')">9</button>
-            <button onclick="appendtoDisplay('-')" class="operator-btn">-</button>
-            <button onclick="appendtoDisplay('4')">4</button>
-            <button onclick="appendtoDisplay('5')">5</button>
-            <button onclick="appendtoDisplay('6')">6</button>
-            <button onclick="appendtoDisplay('*')" class="operator-btn">*</button>
-            <button onclick="appendtoDisplay('1')">1</button>
-            <button onclick="appendtoDisplay('2')">2</button>
-            <button onclick="appendtoDisplay('3')">3</button>
-            <button onclick="appendtoDisplay('/')" class="operator-btn">/</button>
-            <button onclick="appendtoDisplay('.')">.</button>
-            <button onclick="appendtoDisplay('0')">0</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="clearDisplay()" class="operator-btn">C</button>
-        </div>
+  <div id="calculator">
+    <h2 class="calc-title">SmartCalc 2.0</h2>
+
+    <input type="text" id="display" readonly />
+
+    <div class="top-buttons">
+      <button onclick="toggleScientificMode()" id="sci-btn" class="mode-btn red">Sci Mode</button>
+      <button onclick="toggleCurrencyMode()" id="cur-btn" class="mode-btn red">CUR</button>
+      <button onclick="clearDisplay()" class="operator-btn">C</button>
+      <button onclick="clearAll()" class="operator-btn">CE</button>
     </div>
-    <script src="work.js"></script>
+
+    <div class="memory-buttons">
+      <button onclick="memoryRecall()" class="memory-btn">MR</button>
+      <button onclick="memoryClear()" class="memory-btn">MC</button>
+      <button onclick="memoryAdd()" class="memory-btn">M+</button>
+      <button onclick="memorySubtract()" class="memory-btn">M-</button>
+      <button onclick="memoryStore()" class="memory-btn">MS</button>
+    </div>
+
+    <div class="sci-keys" id="sci-keys">
+      <button onclick="appendtoDisplay('Math.PI')">π</button>
+      <button onclick="appendtoDisplay('Math.E')">e</button>
+      <button onclick="calculateSquareRoot()">√</button>
+      <button onclick="appendtoDisplay('Math.pow(')">x^y</button>
+      <button onclick="calculateSquare()">x²</button>
+      <button onclick="calculateFactorial()">x!</button>
+      <button onclick="appendtoDisplay('Math.sin(')">sin</button>
+      <button onclick="appendtoDisplay('Math.cos(')">cos</button>
+      <button onclick="appendtoDisplay('Math.tan(')">tan</button>
+      <button onclick="appendtoDisplay('Math.log10(')">log</button>
+      <button onclick="appendtoDisplay('Math.log(')">ln</button>
+      <button onclick="calculateReciprocal()">1/x</button>
+    </div>
+
+    <div class="cur-keys" id="cur-keys">
+      <button onclick="convertCurrency(1)">USD</button>
+      <button onclick="convertCurrency(82)">INR</button>
+      <button onclick="convertCurrency(0.85)">EUR</button>
+      <button onclick="convertCurrency(0.75)">GBP</button>
+      <button onclick="convertCurrency(1.35)">CAD</button>
+    </div>
+
+    <div class="keys">
+      <button onclick="calculatePercentage()" class="operator-btn">%</button>
+      <button onclick="appendtoDisplay('7')">7</button>
+      <button onclick="appendtoDisplay('8')">8</button>
+      <button onclick="appendtoDisplay('9')">9</button>
+      <button onclick="appendtoDisplay('+')" class="operator-btn">+</button>
+      <button onclick="appendtoDisplay('4')">4</button>
+      <button onclick="appendtoDisplay('5')">5</button>
+      <button onclick="appendtoDisplay('6')">6</button>
+      <button onclick="appendtoDisplay('-')" class="operator-btn">-</button>
+      <button onclick="appendtoDisplay('1')">1</button>
+      <button onclick="appendtoDisplay('2')">2</button>
+      <button onclick="appendtoDisplay('3')">3</button>
+      <button onclick="appendtoDisplay('*')" class="operator-btn">*</button>
+      <button onclick="toggleSign()" class="operator-btn">±</button>
+      <button onclick="appendtoDisplay('0')">0</button>
+      <button onclick="appendtoDisplay('.')">.</button>
+      <button onclick="appendtoDisplay('/')" class="operator-btn">/</button>
+      <button onclick="calculate()" class="equals-btn" style="grid-column: span 4; margin-top: 2px;">=</button>
+    </div>
+  </div>
+
+  <script src="work.js"></script>
 </body>
 </html>
