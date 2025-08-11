@@ -27,6 +27,22 @@
       <button onclick="memoryStore()" class="memory-btn">MS</button>
     </div>
 
+    <div class="utility-buttons">
+      <button onclick="toggleHistory()" id="history-btn" class="utility-btn">History</button>
+      <button onclick="exportHistory()" class="utility-btn">Export</button>
+      <button onclick="clearHistory()" class="utility-btn">Clear H</button>
+    </div>
+
+    <div class="history-panel" id="history-panel">
+      <div class="history-header">
+        <h3>Calculation History</h3>
+        <button onclick="toggleHistory()" class="close-btn">×</button>
+      </div>
+      <div class="history-content" id="history-content">
+        <p class="history-empty">No calculations yet</p>
+      </div>
+    </div>
+
     <div class="sci-keys" id="sci-keys">
       <button onclick="appendtoDisplay('Math.PI')">π</button>
       <button onclick="appendtoDisplay('Math.E')">e</button>
